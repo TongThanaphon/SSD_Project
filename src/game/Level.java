@@ -4,10 +4,6 @@ import java.util.List;
 
 public interface Level {
 
-    public void setLV(String lv);
-
-    public String getLV();
-
     public void setScore(int score);
 
     public int getScore();
