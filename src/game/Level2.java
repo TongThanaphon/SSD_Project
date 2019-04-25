@@ -5,6 +5,11 @@ import java.util.List;
 public class Level2 implements Level{
 
     @Override
+    public void correctAns() {
+
+    }
+
+    @Override
     public void setScore(int score) {
 
     }

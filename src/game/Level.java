@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface Level {
 
-    public void correcAns();
+    public void correctAns();
 
     public void setScore(int score);
 
