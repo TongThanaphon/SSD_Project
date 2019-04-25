@@ -4,6 +4,8 @@ import java.util.List;
 
 public interface Level {
 
+    public void correcAns();
+
     public void setScore(int score);
 
     public int getScore();
