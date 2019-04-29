@@ -41,42 +41,42 @@ public class GameController {
     }
 
     public void handleLV3Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV3");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "3");
     }
 
     public void handleLV4Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV4");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "4");
     }
 
     public void handleLV5Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV5");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "5");
     }
 
     public void handleLV6Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV6");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "6");
     }
 
     public void handleLV7Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV7");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "7");
     }
 
     public void handleLV8Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV8");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "8");
     }
 
     public void handleLV9Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV9");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "9");
     }
 
     public void handleLV10Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV10");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "10");
     }
 
     public void handleLV11Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV11");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "11");
     }
 
     public void handleLV12Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV12");
+        sw.switchToPlay(event, "GUI/PlayUI.fxml", "12");
     }
 }

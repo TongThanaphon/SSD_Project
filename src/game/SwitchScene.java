@@ -32,6 +32,10 @@ public class SwitchScene {
         window.show();
     }
 
+    public void switchToEnd(Stage window, String name) throws Exception{
+
+    }
+
     public String getLV(){ return this.lv; }
 
 }
