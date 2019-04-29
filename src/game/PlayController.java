@@ -130,11 +130,9 @@ public class PlayController {
                     Platform.runLater(()-> setTime(Integer.toString(interval)));
                     interval--;
                 }
-                else {
+                if(interval <= 0) {
                     timer.cancel();
-                    System.out.println("END");
-//                    Stage stage = (Stage) timeLabel.getScene().getWindow();
-//                    ss.switchToEnd(stage,"GUI/PlayUI.fxml");
+                    Platform.runLater(()-> ss.Ending());
                 }
             }
         }, 1000,1000);

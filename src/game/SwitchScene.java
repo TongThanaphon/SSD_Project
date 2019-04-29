@@ -7,6 +7,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.io.*;
+
 
 public class SwitchScene {
 
@@ -21,6 +23,16 @@ public class SwitchScene {
         return instance;
     }
 
+    public void Ending(){
+        try {
+            view = FXMLLoader.load(getClass().getResource("GUI/TimeUpUI.fxml"));
+        }catch (IOException io){
+           io.printStackTrace();
+        };
+        Scene scene = new Scene(view);
+        window.setScene(scene);
+        window.show();
+    }
     public void switchToPlay(ActionEvent event, String name, String lv) throws Exception {
         this.lv = lv;
 

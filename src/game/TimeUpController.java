@@ -8,11 +8,15 @@ import javafx.scene.control.Label;
 
 public class TimeUpController {
 
-    @FXML private Label showScoreLabel;
+    @FXML private Button returnBtn;
     private SwitchScene sw = SwitchScene.getInstance();
 
     @FXML
-    public void initialize(){
-        showScoreLabel.setText("HelloWorld");
+    public void initialize(){}
+
+    public void handleReturnBtn(ActionEvent event) throws Exception{
+        sw.switchToPlay(event,"GUI/GameUI.fxml","0");
     }
+
+
 }
