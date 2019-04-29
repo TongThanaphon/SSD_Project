@@ -52,7 +52,7 @@ public class Game {
 
         int incorrectAnswer = rand.nextInt(this.answer * Integer.parseInt(lv)) + 1;
         if( incorrectAnswer == answer || incorrectAnswer == anotherAnswer || incorrectAnswer == anotherAnswer2 ){
-            getIncorrectAnswer(a,a2);
+            return getIncorrectAnswer(a,a2);
         }
         return Integer.toString(incorrectAnswer);
     }
