@@ -47,11 +47,18 @@ public class Game {
     }
 
     public String getIncorrectAnswer(String a,String a2){
+
         int anotherAnswer = Integer.parseInt(a);
         int anotherAnswer2 = Integer.parseInt(a2);
+        int max = this.answer + 30;
+        int min = this.answer - 30;
 
-        int incorrectAnswer = rand.nextInt(this.answer * Integer.parseInt(lv)) + 1;
-        if( incorrectAnswer == answer || incorrectAnswer == anotherAnswer || incorrectAnswer == anotherAnswer2 ){
+        if(min<0) {
+            min = 1;
+        }
+        int incorrectAnswer = rand.nextInt(max-min+1) + (min);
+        if( incorrectAnswer < 0 || incorrectAnswer % 10 != answer % 10 || incorrectAnswer == answer
+                || incorrectAnswer == anotherAnswer || incorrectAnswer == anotherAnswer2 ){
             return getIncorrectAnswer(a,a2);
         }
         return Integer.toString(incorrectAnswer);
