@@ -10,6 +10,7 @@ public class GameOverController {
     @FXML private Button backBtn;
     @FXML private Label scoreLabel;
     @FXML private Label highscoreLabel;
+    @FXML private Label wrongLabel;
 
     private SwitchScene sw = SwitchScene.getInstance();
 
@@ -22,6 +23,8 @@ public class GameOverController {
         }else {
             highscoreLabel.setText("High score: " + game.getHighscore());
         }
+
+        wrongLabel.setText("Wrong: " + game.getWrongN());
     }
 
     public void handleBackBtn(ActionEvent event) throws Exception{

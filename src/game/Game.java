@@ -7,6 +7,7 @@ public class Game {
     private int score ;
     private int randomNumber;
     private int answer;
+    private int wrongN;
     private String lv;
     private String highscore;
     private Random rand = new Random();
@@ -17,6 +18,7 @@ public class Game {
         this.lv = lv;
         this.score = 0;
         this.setX();
+        this.wrongN = 0;
     }
 
     public String getLV(){ return this.lv; }
@@ -34,6 +36,8 @@ public class Game {
         int input = Integer.parseInt(a);
         if(this.answer==input){
             score += 10;
+        }else{
+            wrongN += 1;
         }
         this.setX();
     }
@@ -75,5 +79,7 @@ public class Game {
     }
 
     public String getHighscore(){ return this.highscore; }
+
+    public int getWrongN(){ return wrongN; }
 
 }

@@ -17,12 +17,13 @@ public class GameController {
     @FXML private Label xLabel;
     @FXML private Label timeLabel;
     @FXML private Label scoreLabel;
+    @FXML private Label wrongLabel;
     @FXML private Button ans1Btn;
     @FXML private Button ans2Btn;
     @FXML private Button ans3Btn;
     @FXML private Button ans4Btn;
 
-    private int interval = 60;
+    private int interval = 10;
     private Game game ;
     private Timer timer ;
     private SwitchScene sw = SwitchScene.getInstance();
@@ -34,6 +35,7 @@ public class GameController {
         yLabel.setText(game.getLV());
         xLabel.setText(game.getX());
         scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
         ans1Btn.setText("0");
         ans2Btn.setText("0");
         ans3Btn.setText("0");
@@ -47,6 +49,7 @@ public class GameController {
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
         scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
         randomChoice();
     }
 
@@ -55,6 +58,7 @@ public class GameController {
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
         scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
         randomChoice();
     }
 
@@ -63,6 +67,7 @@ public class GameController {
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
         scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
         randomChoice();
     }
 
@@ -71,6 +76,7 @@ public class GameController {
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
         scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
         randomChoice();
     }
 
