@@ -23,7 +23,7 @@ public class GameController {
     @FXML private Button ans3Btn;
     @FXML private Button ans4Btn;
 
-    private int interval = 10;
+    private int interval = 60;
     private Game game ;
     private Timer timer ;
     private SwitchScene sw = SwitchScene.getInstance();
