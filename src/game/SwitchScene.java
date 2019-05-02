@@ -12,7 +12,7 @@ public class SwitchScene {
 
     private static SwitchScene instance;
 
-    private String lv;
+    private Game game;
     private Parent view;
     private Stage window;
 
@@ -21,8 +21,9 @@ public class SwitchScene {
         return instance;
     }
 
-    public void switchToPlay(ActionEvent event, String name, String lv) throws Exception {
-        this.lv = lv;
+    public void switchWithEvent(ActionEvent event, String name, Game game, String highscore) throws Exception {
+        this.game = game;
+        game.setHighscore(highscore);
 
         view = FXMLLoader.load(getClass().getResource(name));
         Scene scene = new Scene(view);
@@ -32,6 +33,12 @@ public class SwitchScene {
         window.show();
     }
 
-    public String getLV(){ return this.lv; }
+    public void switchWithOutEvent(String name, Game game) throws Exception{
+        this.game = game;
+        view = FXMLLoader.load(getClass().getResource(name));
+        window.getScene().setRoot(view);
+    }
+
+    public Game getGame(){ return this.game; }
 
 }

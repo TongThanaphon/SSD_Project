@@ -1,82 +1,145 @@
 package game;
 
+import javafx.application.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
+import java.util.Timer;
+
+import java.util.*;
+
 public class GameController {
 
-    @FXML private Button lv2Btn;
-    @FXML private Button lv3Btn;
-    @FXML private Button lv4Btn;
-    @FXML private Button lv5Btn;
-    @FXML private Button lv6Btn;
-    @FXML private Button lv7Btn;
-    @FXML private Button lv8Btn;
-    @FXML private Button lv9Btn;
-    @FXML private Button lv10Btn;
-    @FXML private Button lv11Btn;
-    @FXML private Button lv12Btn;
+    @FXML private Label title;
+    @FXML private Label yLabel;
+    @FXML private Label xLabel;
+    @FXML private Label timeLabel;
+    @FXML private Label scoreLabel;
+    @FXML private Label wrongLabel;
+    @FXML private Button ans1Btn;
+    @FXML private Button ans2Btn;
+    @FXML private Button ans3Btn;
+    @FXML private Button ans4Btn;
 
-    @FXML private Label lv2Label;
-    @FXML private Label lv3Label;
-    @FXML private Label lv4Label;
-    @FXML private Label lv5Label;
-    @FXML private Label lv6Label;
-    @FXML private Label lv7Label;
-    @FXML private Label lv8Label;
-    @FXML private Label lv9Label;
-    @FXML private Label lv10Label;
-    @FXML private Label lv11Label;
-    @FXML private Label lv12Label;
-
+    private int interval = 60;
+    private Game game ;
+    private Timer timer ;
     private SwitchScene sw = SwitchScene.getInstance();
 
     @FXML
-    public void initialize(){}
-
-    public void handleLV2Btn(ActionEvent event) throws  Exception{
-        sw.switchToPlay(event, "GUI/PlayUI.fxml", "2");
+    public void initialize(){
+        game = sw.getGame();
+        title.setText(game.getLV());
+        yLabel.setText(game.getLV());
+        xLabel.setText(game.getX());
+        scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
+        ans1Btn.setText("0");
+        ans2Btn.setText("0");
+        ans3Btn.setText("0");
+        ans4Btn.setText("0");
+        randomChoice();
+        setTimer();
     }
 
-    public void handleLV3Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV3");
+    public void handleAns1Btn(ActionEvent event){
+        String answer = ans1Btn.getText();
+        game.checkCorrect(answer);
+        xLabel.setText(game.getX());
+        scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
+        randomChoice();
     }
 
-    public void handleLV4Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV4");
+    public void handleAns2Btn(ActionEvent event){
+        String answer = ans2Btn.getText();
+        game.checkCorrect(answer);
+        xLabel.setText(game.getX());
+        scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
+        randomChoice();
     }
 
-    public void handleLV5Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV5");
+    public void handleAns3Btn(ActionEvent event){
+        String answer = ans3Btn.getText();
+        game.checkCorrect(answer);
+        xLabel.setText(game.getX());
+        scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
+        randomChoice();
     }
 
-    public void handleLV6Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV6");
+    public void handleAns4Btn(ActionEvent event){
+        String answer = ans4Btn.getText();
+        game.checkCorrect(answer);
+        xLabel.setText(game.getX());
+        scoreLabel.setText("Score: " + game.getScore());
+        wrongLabel.setText("Wrong: " + game.getWrongN());
+        randomChoice();
     }
 
-    public void handleLV7Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV7");
+    public void randomChoice(){
+        Random rand = new Random();
+        String answer;
+        int correctChoice = rand.nextInt(4)+1;
+        switch (correctChoice){
+            case 1 :
+                answer = game.getAnswer();
+                ans1Btn.setText(answer);
+                ans2Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans4Btn.getText()));
+                ans3Btn.setText(game.getIncorrectAnswer(ans2Btn.getText(),ans4Btn.getText()));
+                ans4Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans2Btn.getText()));
+                break;
+            case 2 :
+                answer = game.getAnswer();
+                ans2Btn.setText(answer);
+                ans1Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans4Btn.getText()));
+                ans3Btn.setText(game.getIncorrectAnswer(ans1Btn.getText(),ans4Btn.getText()));
+                ans4Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans1Btn.getText()));
+                break;
+            case 3 :
+                answer = game.getAnswer();
+                ans3Btn.setText(answer);
+                ans2Btn.setText(game.getIncorrectAnswer(ans1Btn.getText(),ans4Btn.getText()));
+                ans1Btn.setText(game.getIncorrectAnswer(ans2Btn.getText(),ans4Btn.getText()));
+                ans4Btn.setText(game.getIncorrectAnswer(ans1Btn.getText(),ans2Btn.getText()));
+                break;
+            case 4 :
+                answer = game.getAnswer();
+                ans4Btn.setText(answer);
+                ans1Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans2Btn.getText()));
+                ans3Btn.setText(game.getIncorrectAnswer(ans1Btn.getText(),ans2Btn.getText()));
+                ans2Btn.setText(game.getIncorrectAnswer(ans3Btn.getText(),ans1Btn.getText()));
+                break;
+        }
     }
 
-    public void handleLV8Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV8");
+    public void setTime(String time){
+        timeLabel.setText("Time: " + time);
     }
 
-    public void handleLV9Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV9");
-    }
-
-    public void handleLV10Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV10");
-    }
-
-    public void handleLV11Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV11");
-    }
-
-    public void handleLV12Btn(ActionEvent event) throws  Exception{
-        System.out.println("LV12");
+    public void setTimer() {
+        timer = new Timer();
+        setTime(Integer.toString(interval));
+        timer.scheduleAtFixedRate(new TimerTask() {
+            public void run() {
+                if(interval > 0)
+                {
+                    Platform.runLater(()-> setTime(Integer.toString(interval)));
+                    interval--;
+                }
+                else {
+                    timer.cancel();
+                    try {
+                        game.updateHighscore(game.getHighscore());
+                        sw.switchWithOutEvent("GUI/GameOverUI.fxml", game);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        }, 1000,1000);
     }
 }
