@@ -42,12 +42,6 @@ public class Score {
         String title = "LV_"+ lv + "_" + score;
         String sc = "";
 
-//        for(String x: list){
-//            String[] sp = x.split("_");
-//            if(sp[1].equals(lv)) oldsc = x;
-//            sc = sc + x + System.lineSeparator();
-//        }
-
         for(int i=0; i<11; i++){
             if(i == Integer.parseInt(lv) - 2) oldsc = "LV_" + lv + "_" + list.get(i);
 

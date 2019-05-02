@@ -33,7 +33,7 @@ public class GameController {
         title.setText(game.getLV());
         yLabel.setText(game.getLV());
         xLabel.setText(game.getX());
-        scoreLabel.setText("score : " + game.getScore());
+        scoreLabel.setText("Score : " + game.getScore());
         ans1Btn.setText("0");
         ans2Btn.setText("0");
         ans3Btn.setText("0");
@@ -54,7 +54,7 @@ public class GameController {
         String answer = ans2Btn.getText();
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
-        scoreLabel.setText("score : " + game.getScore());
+        scoreLabel.setText("Score : " + game.getScore());
         randomChoice();
     }
 
@@ -62,7 +62,7 @@ public class GameController {
         String answer = ans3Btn.getText();
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
-        scoreLabel.setText("score : " + game.getScore());
+        scoreLabel.setText("Score : " + game.getScore());
         randomChoice();
     }
 
@@ -70,7 +70,7 @@ public class GameController {
         String answer = ans4Btn.getText();
         game.checkCorrect(answer);
         xLabel.setText(game.getX());
-        scoreLabel.setText("score : " + game.getScore());
+        scoreLabel.setText("Score: " + game.getScore());
         randomChoice();
     }
 
