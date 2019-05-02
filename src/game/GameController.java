@@ -134,12 +134,12 @@ public class GameController {
                     timer.cancel();
                     try {
                         game.updateHighscore(game.getHighscore());
-                        sw.switchWithOutEvent("GUI/GameOverUI.fxml", game);
+                        sw.switchWithOutEvent("GameOverUI.fxml", game);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
                 }
             }
-        }, 1000,1000);
+        }, 700,700);
     }
 }

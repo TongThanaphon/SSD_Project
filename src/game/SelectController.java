@@ -58,46 +58,46 @@ public class SelectController {
     }
 
     public void handleLV2Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("2"), listScore.get(0));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("2"), listScore.get(0));
     }
 
     public void handleLV3Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("3"), listScore.get(1));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("3"), listScore.get(1));
     }
 
     public void handleLV4Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("4"), listScore.get(2));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("4"), listScore.get(2));
     }
 
     public void handleLV5Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("5"), listScore.get(3));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("5"), listScore.get(3));
     }
 
     public void handleLV6Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("6"), listScore.get(4));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("6"), listScore.get(4));
     }
 
     public void handleLV7Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("7"), listScore.get(5));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("7"), listScore.get(5));
     }
 
     public void handleLV8Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("8"), listScore.get(6));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("8"), listScore.get(6));
     }
 
     public void handleLV9Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("9"), listScore.get(7));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("9"), listScore.get(7));
     }
 
     public void handleLV10Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("10"), listScore.get(8));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("10"), listScore.get(8));
     }
 
     public void handleLV11Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("11"), listScore.get(9));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("11"), listScore.get(9));
     }
 
     public void handleLV12Btn(ActionEvent event) throws  Exception{
-        sw.switchWithEvent(event, "GUI/GameUI.fxml", new Game("12"), listScore.get(10));
+        sw.switchWithEvent(event, "GameUI.fxml", new Game("12"), listScore.get(10));
     }
 }

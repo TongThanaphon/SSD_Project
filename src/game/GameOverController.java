@@ -28,7 +28,7 @@ public class GameOverController {
     }
 
     public void handleBackBtn(ActionEvent event) throws Exception{
-        sw.switchWithOutEvent("GUI/SelectUI.fxml", null);
+        sw.switchWithOutEvent("SelectUI.fxml", null);
     }
 
 
