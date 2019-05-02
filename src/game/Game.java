@@ -6,6 +6,7 @@ public class Game {
 
     private int score ;
     private int randomNumber;
+    private int lastRandomNumber = 0;
     private int answer;
     private int wrongN;
     private String lv;
@@ -24,8 +25,13 @@ public class Game {
     public String getLV(){ return this.lv; }
 
     public void setX(){
-            randomNumber = rand.nextInt(20)+1;
+        randomNumber = rand.nextInt(25)+1;
+        if(lastRandomNumber == randomNumber){
+            setX();
+        }else {
+            lastRandomNumber = randomNumber;
             this.answer = randomNumber * Integer.parseInt(lv);
+        }
     }
 
     public String getX(){
@@ -54,14 +60,14 @@ public class Game {
 
         int anotherAnswer = Integer.parseInt(a);
         int anotherAnswer2 = Integer.parseInt(a2);
-        int max = this.answer + 30;
-        int min = this.answer - 30;
+        int max = this.randomNumber + 3;
+        int min = this.randomNumber - 3;
 
         if(min<0) {
             min = 1;
         }
-        int incorrectAnswer = rand.nextInt(max-min+1) + (min);
-        if( incorrectAnswer < 0 || incorrectAnswer % 10 != answer % 10 || incorrectAnswer == answer
+        int incorrectAnswer = Integer.parseInt(this.lv) * (rand.nextInt(max-min+1) + (min));
+        if( incorrectAnswer < 0 || incorrectAnswer == answer
                 || incorrectAnswer == anotherAnswer || incorrectAnswer == anotherAnswer2 ){
             return getIncorrectAnswer(a,a2);
         }
